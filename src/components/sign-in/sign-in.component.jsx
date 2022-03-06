@@ -1,7 +1,7 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { authentication } from '../../firebase/firebase.utils';
+import { auth } from '../../firebase/firebase.utils';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import './sign-in.styless.scss'
 
@@ -30,7 +30,7 @@ class SignIn extends React.Component {
 
     signInWithGoogle = () => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(authentication, provider)
+        signInWithPopup(auth, provider)
         .then((re) => {
             console.log(re);
         })
